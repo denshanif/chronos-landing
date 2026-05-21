@@ -87,6 +87,8 @@ export default function Hero() {
                     height={500}
                     className="w-full h-auto"
                     priority
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAI8wNPvd7POQAAAABJRU5ErkJggg=="
                   />
                 </motion.div>
 
@@ -110,6 +112,8 @@ export default function Hero() {
                     height={500}
                     className="w-full h-auto"
                     priority
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/+F9PQAI8wNPvd7POQAAAABJRU5ErkJggg=="
                   />
                 </motion.div>
               </div>

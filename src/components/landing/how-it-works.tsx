@@ -1,8 +1,49 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { Container } from "@/components/ui/container";
 import { blurRevealUp, staggerContainer, fadeInUp, appleEase } from "@/lib/animations";
+
+function StepNumber({ num, delay }: { num: string; delay: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const target = parseInt(num, 10);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="size-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0"
+      whileHover={{ scale: 1.1, borderColor: "rgba(var(--primary), 0.4)" }}
+      transition={{ type: "spring", stiffness: 400, damping: 15 }}
+    >
+      <motion.span
+        className="text-xs font-bold text-primary tabular-nums"
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.3, delay: delay }}
+      >
+        {isInView ? (
+          <CountUp target={target} delay={delay} />
+        ) : (
+          "00"
+        )}
+      </motion.span>
+    </motion.div>
+  );
+}
+
+function CountUp({ target, delay }: { target: number; delay: number }) {
+  return (
+    <motion.span
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3, delay }}
+    >
+      {target.toString().padStart(2, "0")}
+    </motion.span>
+  );
+}
 
 export default function HowItWorks() {
   const steps = [
@@ -72,13 +113,7 @@ export default function HowItWorks() {
                       <div
                         className={`inline-flex items-center gap-3 ${i % 2 === 0 ? "lg:flex-row-reverse" : ""}`}
                       >
-                        <motion.div
-                          className="size-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0"
-                          whileHover={{ scale: 1.1, borderColor: "rgba(var(--primary), 0.4)" }}
-                          transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                        >
-                          <span className="text-xs font-bold text-primary">{step.num}</span>
-                        </motion.div>
+                        <StepNumber num={step.num} delay={i * 0.1} />
                         <h3 className="text-lg sm:text-2xl font-semibold">{step.title}</h3>
                       </div>
                       <p

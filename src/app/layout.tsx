@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import ScrollProgress from "@/components/landing/scroll-progress";
+import BackToTop from "@/components/landing/back-to-top";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -106,7 +108,11 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <ScrollProgress />
+          {children}
+          <BackToTop />
+        </ThemeProvider>
       </body>
     </html>
   );

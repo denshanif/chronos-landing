@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useScroll } from "@/hooks/use-scroll";
+import { useActiveSection } from "@/hooks/use-active-section";
 import { useTheme } from "@/components/theme-provider";
 import { appleEase } from "@/lib/animations";
 
@@ -17,6 +18,8 @@ const navLinks = [
   { label: "Cara Kerja", href: "#cara-kerja" },
   { label: "Harga", href: "#harga" },
 ];
+
+const sectionIds = ["fitur", "cara-kerja", "harga"];
 
 const menuItemVariants = {
   closed: { opacity: 0, x: 20, filter: "blur(4px)" },
@@ -33,6 +36,18 @@ export default function Navbar() {
   const { isScrolled } = useScroll(10);
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
+  const activeSection = useActiveSection(sectionIds);
+
+  const scrollTo = useCallback((href: string) => {
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      const offset = 80;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+    setIsOpen(false);
+  }, []);
 
   return (
     <header
@@ -53,21 +68,29 @@ export default function Navbar() {
         </a>
 
         <div className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="relative text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 py-1"
-            >
-              {link.label}
-              <motion.span
-                className="absolute left-0 -bottom-0.5 h-px bg-foreground w-full origin-left"
-                initial={{ scaleX: 0 }}
-                whileHover={{ scaleX: 1 }}
-                transition={{ duration: 0.3, ease: appleEase }}
-              />
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.replace("#", "");
+            return (
+              <button
+                key={link.href}
+                onClick={() => scrollTo(link.href)}
+                className={cn(
+                  "relative text-sm transition-colors duration-300 py-1",
+                  isActive ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                {link.label}
+                <motion.span
+                  className={cn(
+                    "absolute left-0 -bottom-0.5 h-px w-full origin-left bg-foreground",
+                    isActive ? "" : "hidden"
+                  )}
+                  layoutId="nav-underline"
+                  transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                />
+              </button>
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-3">
@@ -93,12 +116,12 @@ export default function Navbar() {
           </button>
 
           <a href={DEMO_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-block">
-            <Button variant="outline" size="default" className="transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+            <Button variant="outline" size="default" className="transition-all duration-300 hover:scale-[1.02] active:scale-[0.97]">
               Demo
             </Button>
           </a>
           <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-block">
-            <Button variant="default" size="default" className="transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+            <Button variant="default" size="default" className="transition-all duration-300 hover:scale-[1.02] active:scale-[0.97]">
               Mulai Trial
             </Button>
           </a>
@@ -139,19 +162,23 @@ export default function Navbar() {
               <div className="p-5 pt-6">
                 <div className="flex flex-col gap-1">
                   {navLinks.map((link, i) => (
-                    <motion.a
+                    <motion.button
                       key={link.href}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => scrollTo(link.href)}
                       custom={i}
                       variants={menuItemVariants}
                       initial="closed"
                       animate="open"
                       exit="exit"
-                      className="block py-3 px-3 text-base text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded-xl transition-all duration-200 font-medium"
+                      className={cn(
+                        "block w-full text-left py-3 px-3 rounded-xl transition-all duration-200 font-medium",
+                        activeSection === link.href.replace("#", "")
+                          ? "text-foreground bg-muted/50"
+                          : "text-foreground/80 hover:text-foreground hover:bg-muted/50"
+                      )}
                     >
                       {link.label}
-                    </motion.a>
+                    </motion.button>
                   ))}
                 </div>
                 <motion.div
