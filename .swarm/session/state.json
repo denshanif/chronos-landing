@@ -1,0 +1,324 @@
+{
+  "version": 2,
+  "writtenAt": 1779281318019,
+  "toolAggregates": {
+    "glob": {
+      "tool": "glob",
+      "count": 6,
+      "successCount": 6,
+      "failureCount": 0,
+      "totalDuration": 6107
+    },
+    "read": {
+      "tool": "read",
+      "count": 3,
+      "successCount": 3,
+      "failureCount": 0,
+      "totalDuration": 224
+    },
+    "websearch": {
+      "tool": "websearch",
+      "count": 3,
+      "successCount": 3,
+      "failureCount": 0,
+      "totalDuration": 7798
+    },
+    "bash": {
+      "tool": "bash",
+      "count": 19,
+      "successCount": 19,
+      "failureCount": 0,
+      "totalDuration": 99394
+    },
+    "webfetch": {
+      "tool": "webfetch",
+      "count": 2,
+      "successCount": 2,
+      "failureCount": 0,
+      "totalDuration": 1727
+    },
+    "gitingest": {
+      "tool": "gitingest",
+      "count": 1,
+      "successCount": 1,
+      "failureCount": 0,
+      "totalDuration": 3255
+    }
+  },
+  "activeAgent": {
+    "ses_1ba98afd1ffeSCmu8MEWOer8S8": "Sisyphus - Ultraworker"
+  },
+  "delegationChains": {},
+  "agentSessions": {
+    "ses_1ba98afd1ffeSCmu8MEWOer8S8": {
+      "agentName": "Sisyphus - Ultraworker",
+      "lastToolCallTime": 1779281317513,
+      "lastAgentEventTime": 1779280859258,
+      "delegationActive": true,
+      "activeInvocationId": 4,
+      "lastInvocationIdByAgent": {
+        "Sisyphus - Ultraworker": 4
+      },
+      "windows": {
+        "Sisyphus - Ultraworker:4": {
+          "id": 4,
+          "agentName": "Sisyphus - Ultraworker",
+          "startedAtMs": 1779281271965,
+          "toolCalls": 3,
+          "consecutiveErrors": 0,
+          "hardLimitHit": false,
+          "lastSuccessTimeMs": 1779281318017,
+          "recentToolCalls": [
+            {
+              "tool": "bash",
+              "argsHash": 10963536215430586000,
+              "timestamp": 1779281289923
+            },
+            {
+              "tool": "bash",
+              "argsHash": 972574654576724200,
+              "timestamp": 1779281308508
+            },
+            {
+              "tool": "bash",
+              "argsHash": 16051240027201505000,
+              "timestamp": 1779281317513
+            }
+          ],
+          "warningIssued": false,
+          "warningReason": "",
+          "transientRetryCount": 0
+        },
+        "Sisyphus - Ultraworker:3": {
+          "id": 3,
+          "agentName": "Sisyphus - Ultraworker",
+          "startedAtMs": 1779281188182,
+          "toolCalls": 6,
+          "consecutiveErrors": 0,
+          "hardLimitHit": false,
+          "lastSuccessTimeMs": 1779281232705,
+          "recentToolCalls": [
+            {
+              "tool": "gitingest",
+              "argsHash": 3413619585572201000,
+              "timestamp": 1779281208086
+            },
+            {
+              "tool": "bash",
+              "argsHash": 5419607409345017000,
+              "timestamp": 1779281208095
+            },
+            {
+              "tool": "bash",
+              "argsHash": 112453434525404600,
+              "timestamp": 1779281208097
+            },
+            {
+              "tool": "bash",
+              "argsHash": 7964375080973078000,
+              "timestamp": 1779281231814
+            },
+            {
+              "tool": "bash",
+              "argsHash": 9038228083968148000,
+              "timestamp": 1779281231841
+            },
+            {
+              "tool": "bash",
+              "argsHash": 9292160959602102000,
+              "timestamp": 1779281231865
+            }
+          ],
+          "warningIssued": false,
+          "warningReason": "",
+          "transientRetryCount": 0
+        },
+        "Sisyphus - Ultraworker:2": {
+          "id": 2,
+          "agentName": "Sisyphus - Ultraworker",
+          "startedAtMs": 1779280950728,
+          "toolCalls": 19,
+          "consecutiveErrors": 0,
+          "hardLimitHit": false,
+          "lastSuccessTimeMs": 1779281178171,
+          "recentToolCalls": [
+            {
+              "tool": "glob",
+              "argsHash": 8075344820535503000,
+              "timestamp": 1779280968480
+            },
+            {
+              "tool": "glob",
+              "argsHash": 16572879611146684000,
+              "timestamp": 1779280968494
+            },
+            {
+              "tool": "glob",
+              "argsHash": 4690985026537596000,
+              "timestamp": 1779280968501
+            },
+            {
+              "tool": "bash",
+              "argsHash": 14684037557172780000,
+              "timestamp": 1779280983873
+            },
+            {
+              "tool": "bash",
+              "argsHash": 18411842556328563000,
+              "timestamp": 1779280983911
+            },
+            {
+              "tool": "read",
+              "argsHash": 17216309829610015000,
+              "timestamp": 1779280994400
+            },
+            {
+              "tool": "read",
+              "argsHash": 354080305697817300,
+              "timestamp": 1779280994418
+            },
+            {
+              "tool": "bash",
+              "argsHash": 8093958417794979000,
+              "timestamp": 1779281017463
+            },
+            {
+              "tool": "bash",
+              "argsHash": 8413737328600724000,
+              "timestamp": 1779281017464
+            },
+            {
+              "tool": "bash",
+              "argsHash": 15485615501622243000,
+              "timestamp": 1779281017465
+            },
+            {
+              "tool": "websearch",
+              "argsHash": 8279408539054770000,
+              "timestamp": 1779281046345
+            },
+            {
+              "tool": "bash",
+              "argsHash": 18341573849123260000,
+              "timestamp": 1779281046384
+            },
+            {
+              "tool": "bash",
+              "argsHash": 3570509157658237400,
+              "timestamp": 1779281071436
+            },
+            {
+              "tool": "bash",
+              "argsHash": 4035627828425180000,
+              "timestamp": 1779281071525
+            },
+            {
+              "tool": "bash",
+              "argsHash": 9256784087571362000,
+              "timestamp": 1779281153110
+            },
+            {
+              "tool": "bash",
+              "argsHash": 14463716081327540000,
+              "timestamp": 1779281153144
+            },
+            {
+              "tool": "bash",
+              "argsHash": 15346165809383592000,
+              "timestamp": 1779281153225
+            },
+            {
+              "tool": "webfetch",
+              "argsHash": 15120439706978804000,
+              "timestamp": 1779281176978
+            },
+            {
+              "tool": "webfetch",
+              "argsHash": 9514460013923650000,
+              "timestamp": 1779281176996
+            }
+          ],
+          "warningIssued": false,
+          "warningReason": "",
+          "transientRetryCount": 0
+        },
+        "Sisyphus - Ultraworker:1": {
+          "id": 1,
+          "agentName": "Sisyphus - Ultraworker",
+          "startedAtMs": 1779280859259,
+          "toolCalls": 6,
+          "consecutiveErrors": 0,
+          "hardLimitHit": false,
+          "lastSuccessTimeMs": 1779280915975,
+          "recentToolCalls": [
+            {
+              "tool": "glob",
+              "argsHash": 16572879611146684000,
+              "timestamp": 1779280878839
+            },
+            {
+              "tool": "glob",
+              "argsHash": 3798798940351972000,
+              "timestamp": 1779280878936
+            },
+            {
+              "tool": "read",
+              "argsHash": 13390555792833427000,
+              "timestamp": 1779280899377
+            },
+            {
+              "tool": "glob",
+              "argsHash": 12670428744502501000,
+              "timestamp": 1779280899386
+            },
+            {
+              "tool": "websearch",
+              "argsHash": 8696012541427753000,
+              "timestamp": 1779280912532
+            },
+            {
+              "tool": "websearch",
+              "argsHash": 503893914048162700,
+              "timestamp": 1779280912541
+            }
+          ],
+          "warningIssued": false,
+          "warningReason": "",
+          "transientRetryCount": 0
+        }
+      },
+      "lastCompactionHint": 0,
+      "architectWriteCount": 0,
+      "lastCoderDelegationTaskId": null,
+      "currentTaskId": null,
+      "turboMode": false,
+      "gateLog": {},
+      "reviewerCallCount": {},
+      "lastGateFailure": null,
+      "partialGateWarningsIssuedForTask": [],
+      "selfFixAttempted": false,
+      "selfCodingWarnedAtCount": 0,
+      "catastrophicPhaseWarnings": [],
+      "lastPhaseCompleteTimestamp": 0,
+      "lastPhaseCompletePhase": 0,
+      "phaseAgentsDispatched": [
+        "Sisyphus - Ultraworker"
+      ],
+      "lastCompletedPhaseAgentsDispatched": [],
+      "qaSkipCount": 0,
+      "qaSkipTaskIds": [],
+      "pendingAdvisoryMessages": [],
+      "taskWorkflowStates": {},
+      "scopeViolationDetected": false,
+      "model_fallback_index": 0,
+      "modelFallbackExhausted": false,
+      "coderRevisions": 0,
+      "revisionLimitHit": false,
+      "fullAutoMode": false,
+      "fullAutoInteractionCount": 0,
+      "fullAutoDeadlockCount": 0,
+      "fullAutoLastQuestionHash": null,
+      "sessionRehydratedAt": 0
+    }
+  }
+}
