@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Container } from "@/components/ui/container";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { blurRevealUp, staggerContainer, appleEase } from "@/lib/animations";
 import { cn } from "@/lib/utils";
 
 const testimonials = [
@@ -23,6 +23,16 @@ const testimonials = [
     role: "Pengelola Hartono Gaming, Surabaya",
   },
 ];
+
+const cardVariants = {
+  initial: { opacity: 0, y: 30, scale: 0.95 },
+  animate: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, delay: i * 0.12, ease: appleEase },
+  }),
+};
 
 export default function Testimonial() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -73,10 +83,10 @@ export default function Testimonial() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center max-w-2xl mx-auto mb-16 sm:mb-20"
         >
-          <motion.span variants={fadeInUp} className="text-xs font-medium text-primary uppercase tracking-widest">
+          <motion.span variants={blurRevealUp} className="text-xs font-medium text-primary uppercase tracking-widest">
             Testimonial
           </motion.span>
-          <motion.h2 variants={fadeInUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          <motion.h2 variants={blurRevealUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Dipercaya Pebisnis Rental
           </motion.h2>
         </motion.div>
@@ -92,14 +102,19 @@ export default function Testimonial() {
             className="flex md:grid md:grid-cols-3 md:gap-6"
             style={isMobile ? { gap: 24 } : undefined}
           >
-            {testimonials.map((t) => (
+            {testimonials.map((t, i) => (
               <motion.div
                 key={t.name}
-                variants={fadeInUp}
+                custom={i}
+                variants={!isMobile ? cardVariants : undefined}
+                initial={!isMobile ? "initial" : undefined}
+                whileInView={!isMobile ? "animate" : undefined}
+                viewport={!isMobile ? { once: true, margin: "-50px" } : undefined}
                 className={cn(
                   "rounded-2xl border border-border/50 bg-card p-6 sm:p-8 shrink-0",
                   isMobile ? "w-[calc(100vw-64px)]" : ""
                 )}
+                whileHover={{ y: -4, transition: { duration: 0.3, ease: appleEase } }}
               >
                 <svg className="size-6 text-primary/20 mb-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
@@ -120,14 +135,23 @@ export default function Testimonial() {
               <button
                 key={i}
                 onClick={() => setActiveIndex(i)}
-                className={cn(
-                  "h-1.5 rounded-full transition-all duration-500",
-                  i === activeIndex
-                    ? "w-6 bg-primary"
-                    : "w-1.5 bg-border hover:bg-muted-foreground/30"
+                className="relative h-2 rounded-full transition-all duration-500"
+                style={{
+                  width: i === activeIndex ? 24 : 6,
+                  background: i === activeIndex
+                    ? "var(--primary)"
+                    : "var(--muted-foreground)",
+                  opacity: i === activeIndex ? 1 : 0.3,
+                }}
+              >
+                {i === activeIndex && (
+                  <motion.div
+                    className="absolute inset-0 rounded-full bg-primary"
+                    layoutId="activeDot"
+                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                  />
                 )}
-                aria-label={`Testimonial ke-${i + 1}`}
-              />
+              </button>
             ))}
           </div>
         )}

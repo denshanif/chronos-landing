@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { blurRevealUp, fadeInUp, staggerContainerSlow, appleEase } from "@/lib/animations";
 
 const WA_LINK = "https://wa.me/6285189897289";
 
@@ -15,20 +15,20 @@ export default function Hero() {
     <section className="relative min-h-[90vh] flex items-center bg-background overflow-hidden">
       <Container className="relative z-10 pt-20 pb-16 sm:pb-20 lg:pt-24 lg:pb-32">
         <motion.div
-          variants={staggerContainer}
+          variants={staggerContainerSlow}
           initial="initial"
           animate="animate"
           className="flex flex-col items-center text-center max-w-4xl mx-auto"
         >
           <motion.span
-            variants={fadeInUp}
+            variants={blurRevealUp}
             className="inline-flex items-center rounded-full border border-border bg-muted/50 px-4 py-1.5 text-xs font-medium text-muted-foreground mb-6"
           >
             Otomatisasi Rental PS berbasis IoT
           </motion.span>
 
           <motion.h1
-            variants={fadeInUp}
+            variants={blurRevealUp}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.05]"
           >
             Rental PlayStation kini lebih{" "}
@@ -47,12 +47,12 @@ export default function Hero() {
             className="mt-10 flex flex-col sm:flex-row items-center gap-4"
           >
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer">
-              <Button variant="default" size="lg" className="px-8 text-base h-12">
+              <Button variant="default" size="lg" className="px-8 text-base h-12 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]">
                 Request Demo
               </Button>
             </a>
             <a href="#cara-kerja">
-              <Button variant="outline" size="lg" className="px-8 text-base h-12">
+              <Button variant="outline" size="lg" className="px-8 text-base h-12 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]">
                 Lihat Cara Kerja
               </Button>
             </a>
@@ -69,7 +69,7 @@ export default function Hero() {
               <div className="relative">
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{ duration: 7, repeat: Infinity, ease: appleEase }}
                   className="relative rounded-2xl border border-border/20 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.12)] overflow-hidden bg-white dark:bg-card max-w-[88%] lg:max-w-[78%]"
                 >
                   <div className="h-8 sm:h-9 bg-muted/30 border-b border-border/30 flex items-center px-4 gap-2">
@@ -92,7 +92,7 @@ export default function Hero() {
 
                 <motion.div
                   animate={{ y: [0, -12, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{ duration: 6, repeat: Infinity, ease: appleEase }}
                   className="relative -mt-16 sm:-mt-20 md:-mt-28 ml-auto rounded-2xl border border-border/20 shadow-[0_25px_60px_-12px_rgba(0,0,0,0.2)] overflow-hidden bg-white dark:bg-card max-w-[88%] lg:max-w-[78%]"
                 >
                   <div className="h-8 sm:h-9 bg-muted/30 border-b border-border/30 flex items-center px-4 gap-2">

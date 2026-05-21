@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { blurRevealUp, staggerContainer, fadeInUp, appleEase } from "@/lib/animations";
 
 const WA_LINK = "https://wa.me/6285189897289";
 
@@ -50,6 +50,16 @@ const plans = [
   },
 ];
 
+const cardVariants = {
+  initial: { opacity: 0, y: 30, scale: 0.95 },
+  animate: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, delay: i * 0.12, ease: appleEase },
+  }),
+};
+
 export default function Pricing() {
   return (
     <section id="harga" className="py-24 sm:py-32 scroll-mt-20 lg:scroll-mt-24">
@@ -61,10 +71,10 @@ export default function Pricing() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center max-w-2xl mx-auto mb-16 sm:mb-20"
         >
-          <motion.span variants={fadeInUp} className="text-xs font-medium text-primary uppercase tracking-widest">
+          <motion.span variants={blurRevealUp} className="text-xs font-medium text-primary uppercase tracking-widest">
             Harga
           </motion.span>
-          <motion.h2 variants={fadeInUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          <motion.h2 variants={blurRevealUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Pilih Paket yang Tepat
           </motion.h2>
           <motion.p variants={fadeInUp} className="mt-4 text-lg text-muted-foreground">
@@ -73,26 +83,32 @@ export default function Pricing() {
         </motion.div>
 
         <motion.div
-          variants={staggerContainer}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto"
         >
-          {plans.map((plan) => (
+          {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
-              variants={fadeInUp}
-              className={`relative rounded-2xl border p-6 sm:p-8 transition-all duration-300 flex flex-col ${
+              custom={i}
+              variants={cardVariants}
+              whileHover={{ y: -6, transition: { duration: 0.3, ease: appleEase } }}
+              className={`relative rounded-2xl border p-6 sm:p-8 transition-shadow duration-500 flex flex-col ${
                 plan.popular
                   ? "border-primary/30 bg-primary/[0.02] shadow-sm shadow-primary/5"
                   : "border-border/50 bg-white dark:bg-card hover:shadow-md"
               }`}
             >
               {plan.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center rounded-full bg-primary px-4 py-1 text-xs font-medium text-primary-foreground">
+                <motion.span
+                  initial={{ opacity: 0, y: -8, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 0.3, duration: 0.5, ease: appleEase }}
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center rounded-full bg-primary px-4 py-1 text-xs font-medium text-primary-foreground"
+                >
                   Paling Populer
-                </span>
+                </motion.span>
               )}
               <div className="mb-6">
                 <h3 className="text-lg font-semibold">{plan.name}</h3>
@@ -114,7 +130,11 @@ export default function Pricing() {
                 ))}
               </ul>
               <a href={plan.cta.href} target="_blank" rel="noopener noreferrer">
-                <Button variant={plan.popular ? "default" : "outline"} className="w-full h-11" size="lg">
+                <Button
+                  variant={plan.popular ? "default" : "outline"}
+                  className="w-full h-11 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                  size="lg"
+                >
                   {plan.cta.label}
                 </Button>
               </a>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { blurRevealUp, staggerContainer, fadeInUp, appleEase } from "@/lib/animations";
 
 export default function HowItWorks() {
   const steps = [
@@ -43,10 +43,10 @@ export default function HowItWorks() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center max-w-2xl mx-auto mb-16 sm:mb-20"
         >
-          <motion.span variants={fadeInUp} className="text-xs font-medium text-primary uppercase tracking-widest">
+          <motion.span variants={blurRevealUp} className="text-xs font-medium text-primary uppercase tracking-widest">
             Cara Kerja
           </motion.span>
-          <motion.h2 variants={fadeInUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          <motion.h2 variants={blurRevealUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Cara Kerja Chronos
           </motion.h2>
           <motion.p variants={fadeInUp} className="mt-4 text-lg text-muted-foreground">
@@ -61,10 +61,10 @@ export default function HowItWorks() {
             {steps.map((step, i) => (
               <div key={step.num} className="relative">
                 <motion.div
-                  variants={fadeInUp}
-                  initial="initial"
-                  whileInView="animate"
+                  initial={{ opacity: 0, y: 40, filter: "blur(6px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.7, delay: i * 0.1, ease: appleEase }}
                   className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-8 lg:gap-16`}
                 >
                   <div className="flex-1">
@@ -72,9 +72,13 @@ export default function HowItWorks() {
                       <div
                         className={`inline-flex items-center gap-3 ${i % 2 === 0 ? "lg:flex-row-reverse" : ""}`}
                       >
-                        <div className="size-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                        <motion.div
+                          className="size-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0"
+                          whileHover={{ scale: 1.1, borderColor: "rgba(var(--primary), 0.4)" }}
+                          transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                        >
                           <span className="text-xs font-bold text-primary">{step.num}</span>
-                        </div>
+                        </motion.div>
                         <h3 className="text-xl sm:text-2xl font-semibold">{step.title}</h3>
                       </div>
                       <p
@@ -93,8 +97,8 @@ export default function HowItWorks() {
                 <div className="hidden lg:flex absolute left-1/2 top-1.5 -translate-x-1/2 size-4 rounded-full border-2 border-primary/30 bg-background z-10">
                   <motion.div
                     className="size-1.5 rounded-full bg-primary/40 m-auto"
-                    animate={{ scale: [1, 1.4, 1] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    animate={{ scale: [1, 1.5, 1], opacity: [0.6, 1, 0.6] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: appleEase }}
                   />
                 </div>
               </div>

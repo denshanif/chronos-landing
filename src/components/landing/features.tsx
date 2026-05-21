@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Monitor, CreditCard, Timer, BarChart3, Users } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { blurRevealUp, staggerContainer, fadeInUp, appleEase } from "@/lib/animations";
 
 const features = [
   {
@@ -38,6 +38,16 @@ const features = [
   },
 ];
 
+const cardVariants = {
+  initial: { opacity: 0, y: 30, scale: 0.96 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: appleEase },
+  },
+};
+
 const iconVariants = {
   hover: {
     scale: 1.15,
@@ -57,10 +67,10 @@ export default function Features() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center max-w-2xl mx-auto mb-16 sm:mb-20"
         >
-          <motion.span variants={fadeInUp} className="text-xs font-medium text-primary uppercase tracking-widest">
+          <motion.span variants={blurRevealUp} className="text-xs font-medium text-primary uppercase tracking-widest">
             Fitur
           </motion.span>
-          <motion.h2 variants={fadeInUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          <motion.h2 variants={blurRevealUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Semua yang Anda Butuhkan
           </motion.h2>
           <motion.p variants={fadeInUp} className="mt-4 text-lg text-muted-foreground">
@@ -80,10 +90,10 @@ export default function Features() {
             return (
               <motion.div
                 key={feature.title}
-                variants={fadeInUp}
-                whileHover={{ y: -6, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="group rounded-2xl border border-border/50 bg-card p-6 sm:p-8 shadow-sm transition-colors duration-300 hover:border-border/80"
+                variants={cardVariants}
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 280, damping: 22 }}
+                className="group rounded-2xl border border-border/50 bg-card p-6 sm:p-8 shadow-sm transition-shadow duration-500 hover:shadow-md hover:border-border/80"
               >
                 <motion.div
                   className="flex size-12 items-center justify-center rounded-xl bg-primary/5 text-primary mb-5 group-hover:bg-primary/10 transition-colors duration-300"
