@@ -5,6 +5,8 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
+const WA_LINK = "https://wa.me/6285189897289";
+
 const plans = [
   {
     name: "Newbie",
@@ -16,7 +18,7 @@ const plans = [
       "Timer rental otomatis",
       "Laporan harian sederhana",
     ],
-    cta: "Mulai Trial",
+    cta: { label: "Mulai Trial", href: WA_LINK },
     popular: false,
   },
   {
@@ -30,7 +32,7 @@ const plans = [
       "Dashboard dan monitor pendapatan",
       "Manajemen operator",
     ],
-    cta: "Mulai Trial",
+    cta: { label: "Mulai Trial", href: WA_LINK },
     popular: true,
   },
   {
@@ -38,12 +40,12 @@ const plans = [
     desc: "Untuk usaha rental skala besar 7+ unit.",
     features: [
       "Manajemen unlimited perangkat",
-      "Semua fitur Business",
+      "Semua fitur Pro Player",
       "Monitoring perangkat real-time",
       "Manajemen operator penuh",
       "Prioritas support",
     ],
-    cta: "Hubungi Kami",
+    cta: { label: "Hubungi Kami", href: WA_LINK },
     popular: false,
   },
 ];
@@ -111,9 +113,11 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <Button variant={plan.popular ? "default" : "outline"} className="w-full h-11" size="lg">
-                {plan.cta}
-              </Button>
+              <a href={plan.cta.href} target="_blank" rel="noopener noreferrer">
+                <Button variant={plan.popular ? "default" : "outline"} className="w-full h-11" size="lg">
+                  {plan.cta.label}
+                </Button>
+              </a>
             </motion.div>
           ))}
         </motion.div>

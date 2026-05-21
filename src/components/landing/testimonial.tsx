@@ -64,7 +64,7 @@ export default function Testimonial() {
   }, [activeIndex, isMobile, cardWidth, controls]);
 
   return (
-    <section className="py-24 sm:py-32 bg-gradient-subtle">
+    <section className="py-24 sm:py-32 bg-section-subtle">
       <Container>
         <motion.div
           variants={staggerContainer}
@@ -89,11 +89,8 @@ export default function Testimonial() {
             dragConstraints={isMobile ? { left: -(testimonials.length - 1) * cardWidth, right: 0 } : undefined}
             dragElastic={0.15}
             onDragEnd={handleDragEnd}
-            className={cn(
-              "flex",
-              "md:grid md:grid-cols-3 md:gap-6"
-            )}
-            style={isMobile ? { gap: 24, paddingLeft: 0, paddingRight: 0 } : undefined}
+            className="flex md:grid md:grid-cols-3 md:gap-6"
+            style={isMobile ? { gap: 24 } : undefined}
           >
             {testimonials.map((t) => (
               <motion.div

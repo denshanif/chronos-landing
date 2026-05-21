@@ -163,11 +163,6 @@ body {
   @apply px-4 sm:px-6 lg:px-8;
 }
 
-/* Subtle Background Gradient */
-.bg-gradient-subtle {
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklch, var(--primary) 4%, transparent) 0%,
-    var(--background) 100%
-  );
+.bg-section-subtle {
+  background: var(--muted);
 }

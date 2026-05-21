@@ -4,13 +4,25 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
+const WA_LINK = "https://wa.me/6285189897289";
+const DEMO_LINK = "https://chronos.katalisdev.my.id";
+const COMPANY_LINK = "https://katalisdev.my.id";
+
 const footerLinks = [
   {
     title: "Produk",
     links: [
-      { label: "Fitur", href: "#fitur" },
-      { label: "Cara Kerja", href: "#cara-kerja" },
-      { label: "Harga", href: "#harga" },
+      { label: "Fitur", href: "#fitur", external: false },
+      { label: "Cara Kerja", href: "#cara-kerja", external: false },
+      { label: "Harga", href: "#harga", external: false },
+    ],
+  },
+  {
+    title: "Tautan",
+    links: [
+      { label: "Demo Langsung", href: DEMO_LINK, external: true },
+      { label: "Website Katalis", href: COMPANY_LINK, external: true },
+      { label: "Hubungi Kami", href: WA_LINK, external: true },
     ],
   },
 ];
@@ -31,8 +43,8 @@ export default function Footer() {
           viewport={{ once: true, margin: "-50px" }}
         >
           <div className="py-16 sm:py-20 lg:py-24">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-              <div className="md:col-span-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-12">
+              <div className="sm:col-span-2 md:col-span-1">
                 <motion.div variants={fadeInUp}>
                   <div className="flex items-baseline gap-1.5 mb-4">
                     <span className="text-lg font-semibold tracking-tight text-white">
@@ -65,6 +77,8 @@ export default function Footer() {
                         >
                           <a
                             href={link.href}
+                            target={link.external ? "_blank" : undefined}
+                            rel={link.external ? "noopener noreferrer" : undefined}
                             className="text-sm text-neutral-400 hover:text-white transition-all duration-300 relative inline-block group"
                           >
                             {link.label}

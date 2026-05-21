@@ -14,9 +14,45 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Chronos by Katalis — Rental PlayStation Pintar",
+  title: "Chronos by Katalis — Sistem Otomatisasi Rental PlayStation",
   description:
-    "Self-checkout, pembayaran digital, dan kontrol otomatis dalam satu sistem IoT pintar untuk rental PlayStation.",
+    "Platform IoT untuk otomatisasi rental PlayStation. Fitur self-checkout, pembayaran QRIS otomatis, timer rental, dan monitoring real-time. Kelola bisnis rental PS Anda dari mana saja.",
+  keywords: [
+    "rental PlayStation",
+    "otomatisasi rental PS",
+    "self-checkout PlayStation",
+    "pembayaran QRIS rental",
+    "sistem rental PS IoT",
+    "chronos",
+    "katalis",
+    "manajemen rental PlayStation",
+    "timer rental otomatis",
+  ],
+  authors: [{ name: "Katalis" }],
+  creator: "Katalis",
+  publisher: "Katalis",
+  openGraph: {
+    title: "Chronos by Katalis — Sistem Otomatisasi Rental PlayStation",
+    description:
+      "Platform IoT untuk otomatisasi rental PlayStation dengan self-checkout, pembayaran QRIS, dan monitoring real-time.",
+    url: "https://chronos.katalisdev.my.id",
+    siteName: "Chronos",
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chronos by Katalis — Otomatisasi Rental PlayStation",
+    description:
+      "Self-checkout, pembayaran QRIS, timer otomatis — kelola bisnis rental PS Anda dari mana saja.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -41,6 +77,31 @@ export default function RootLayout({
                 }
               } catch(e) {}
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Chronos",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web",
+              "description": "Platform IoT untuk otomatisasi rental PlayStation dengan self-checkout, pembayaran QRIS, timer otomatis, dan monitoring real-time.",
+              "url": "https://chronos.katalisdev.my.id",
+              "author": {
+                "@type": "Organization",
+                "name": "Katalis",
+                "url": "https://katalisdev.my.id"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "IDR",
+                "description": "Trial gratis 14 hari"
+              }
+            }),
           }}
         />
       </head>

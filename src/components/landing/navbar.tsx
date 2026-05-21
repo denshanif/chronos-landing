@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 import { useScroll } from "@/hooks/use-scroll";
 import { useTheme } from "@/components/theme-provider";
 
+const WA_LINK = "https://wa.me/6285189897289";
+
 const navLinks = [
   { label: "Fitur", href: "#fitur" },
   { label: "Cara Kerja", href: "#cara-kerja" },
@@ -59,9 +61,11 @@ export default function Navbar() {
             )}
           </button>
 
-          <Button variant="default" size="default" className="hidden sm:inline-flex">
-            Mulai Trial
-          </Button>
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-block">
+            <Button variant="default" size="default">
+              Mulai Trial
+            </Button>
+          </a>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -82,7 +86,7 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/20 z-40 lg:hidden"
+              className="fixed inset-0 bg-black/20 dark:bg-black/40 z-40 lg:hidden"
             />
             <motion.div
               initial={{ x: "100%" }}
@@ -113,9 +117,11 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="mt-8 space-y-3">
-                <Button variant="default" size="lg" className="w-full">
-                  Mulai Trial
-                </Button>
+                <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="block">
+                  <Button variant="default" size="lg" className="w-full">
+                    Mulai Trial
+                  </Button>
+                </a>
                 <button
                   onClick={toggleTheme}
                   className="flex items-center justify-center gap-2 w-full py-3 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-lg border border-border"

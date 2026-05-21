@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
+const WA_LINK = "https://wa.me/6285189897289";
+
 export default function Hero() {
   const { scrollY } = useScroll();
   const parallaxY = useTransform(scrollY, [0, 600], [0, 40]);
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-gradient-to-b from-neutral-50/80 to-white dark:from-neutral-950/80 dark:to-background overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center bg-background overflow-hidden">
       <Container className="relative z-10 pt-20 pb-16 sm:pb-20 lg:pt-24 lg:pb-32">
         <motion.div
           variants={staggerContainer}
@@ -44,12 +46,16 @@ export default function Hero() {
             variants={fadeInUp}
             className="mt-10 flex flex-col sm:flex-row items-center gap-4"
           >
-            <Button variant="default" size="lg" className="px-8 text-base h-12">
-              Request Demo
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 text-base h-12">
-              Lihat Cara Kerja
-            </Button>
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer">
+              <Button variant="default" size="lg" className="px-8 text-base h-12">
+                Request Demo
+              </Button>
+            </a>
+            <a href="#cara-kerja">
+              <Button variant="outline" size="lg" className="px-8 text-base h-12">
+                Lihat Cara Kerja
+              </Button>
+            </a>
           </motion.div>
 
           <motion.div

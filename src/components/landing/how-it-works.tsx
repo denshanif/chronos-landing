@@ -34,7 +34,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="cara-kerja" className="py-24 sm:py-32 bg-gradient-subtle scroll-mt-20 lg:scroll-mt-24">
+    <section id="cara-kerja" className="py-24 sm:py-32 bg-section-subtle scroll-mt-20 lg:scroll-mt-24">
       <Container>
         <motion.div
           variants={staggerContainer}
