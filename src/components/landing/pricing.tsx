@@ -68,7 +68,7 @@ export default function Pricing() {
             Pilih Paket yang Tepat
           </motion.h2>
           <motion.p variants={fadeInUp} className="mt-4 text-lg text-muted-foreground">
-            Mulai <span className="text-foreground font-semibold">trial gratis 14 hari</span> tanpa kartu kredit. Hubungi kami untuk informasi harga dan kebutuhan khusus.
+            <span className="text-foreground font-semibold">Tanpa biaya komitmen awal,</span> mulai dengan trial untuk merasakan kemudahan mengelola rental PlayStation secara otomatis.
           </motion.p>
         </motion.div>
 

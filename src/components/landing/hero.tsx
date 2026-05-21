@@ -81,8 +81,8 @@ export default function Hero() {
                     <div className="ml-3 h-5 flex-1 max-w-[180px] rounded-md bg-muted/50" />
                   </div>
                   <Image
-                    src="/images/preview-2.png"
-                    alt="Chronos Analytics — Monitoring pendapatan real-time"
+                    src="/images/preview-1.png"
+                    alt="Chronos Dashboard — Tampilan utama sistem"
                     width={800}
                     height={500}
                     className="w-full h-auto"
@@ -104,8 +104,8 @@ export default function Hero() {
                     <div className="ml-3 h-5 flex-1 max-w-[240px] rounded-md bg-muted/50" />
                   </div>
                   <Image
-                    src="/images/preview-1.png"
-                    alt="Chronos Dashboard — Tampilan utama sistem"
+                    src="/images/preview-2.png"
+                    alt="Chronos Analytics — Monitoring pendapatan real-time"
                     width={800}
                     height={500}
                     className="w-full h-auto"

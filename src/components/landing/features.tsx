@@ -92,7 +92,7 @@ export default function Features() {
                   <Icon className="size-6" />
                 </motion.div>
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: feature.desc }} />
               </motion.div>
             );
           })}

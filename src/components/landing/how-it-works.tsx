@@ -50,7 +50,7 @@ export default function HowItWorks() {
             Cara Kerja Chronos
           </motion.h2>
           <motion.p variants={fadeInUp} className="mt-4 text-lg text-muted-foreground">
-            <span className="text-foreground font-semibold">Empat</span> langkah sederhana untuk mengotomatiskan bisnis rental PlayStation Anda.
+            <span className="text-foreground font-semibold">Empat langkah mudah,</span> dari pelanggan scan QR hingga sesi rental berakhir otomatis. Semua dikelola dalam satu sistem pintar untuk kemudahan Anda.
           </motion.p>
         </motion.div>
 

@@ -20,7 +20,7 @@ const footerLinks = [
   {
     title: "Tautan",
     links: [
-      { label: "Demo Langsung", href: DEMO_LINK, external: true },
+      { label: "Demo Chronos", href: DEMO_LINK, external: true },
       { label: "Website Katalis", href: COMPANY_LINK, external: true },
       { label: "Hubungi Kami", href: WA_LINK, external: true },
     ],
