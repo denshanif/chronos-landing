@@ -70,10 +70,10 @@ export default function Features() {
           <motion.span variants={blurRevealUp} className="text-xs font-medium text-primary uppercase tracking-widest">
             Fitur
           </motion.span>
-          <motion.h2 variants={blurRevealUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          <motion.h2 variants={blurRevealUp} className="mt-4 text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Semua yang Anda Butuhkan
           </motion.h2>
-          <motion.p variants={fadeInUp} className="mt-4 text-lg text-muted-foreground">
+          <motion.p variants={fadeInUp} className="mt-4 text-base sm:text-lg text-muted-foreground">
             Platform <span className="text-foreground font-semibold">all-in-one</span> untuk mengelola bisnis rental PlayStation Anda secara <span className="text-foreground font-semibold">otomatis</span>.
           </motion.p>
         </motion.div>
@@ -101,7 +101,7 @@ export default function Features() {
                 >
                   <Icon className="size-6" />
                 </motion.div>
-                <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                <h3 className="text-base sm:text-lg font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: feature.desc }} />
               </motion.div>
             );

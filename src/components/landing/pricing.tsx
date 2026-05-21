@@ -74,10 +74,10 @@ export default function Pricing() {
           <motion.span variants={blurRevealUp} className="text-xs font-medium text-primary uppercase tracking-widest">
             Harga
           </motion.span>
-          <motion.h2 variants={blurRevealUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          <motion.h2 variants={blurRevealUp} className="mt-4 text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Pilih Paket yang Tepat
           </motion.h2>
-          <motion.p variants={fadeInUp} className="mt-4 text-lg text-muted-foreground">
+          <motion.p variants={fadeInUp} className="mt-4 text-base sm:text-lg text-muted-foreground">
             <span className="text-foreground font-semibold">Tanpa biaya komitmen awal,</span> mulai dengan trial untuk merasakan kemudahan mengelola rental PlayStation secara otomatis.
           </motion.p>
         </motion.div>

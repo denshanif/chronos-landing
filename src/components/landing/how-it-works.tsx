@@ -46,10 +46,10 @@ export default function HowItWorks() {
           <motion.span variants={blurRevealUp} className="text-xs font-medium text-primary uppercase tracking-widest">
             Cara Kerja
           </motion.span>
-          <motion.h2 variants={blurRevealUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          <motion.h2 variants={blurRevealUp} className="mt-4 text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             Cara Kerja Chronos
           </motion.h2>
-          <motion.p variants={fadeInUp} className="mt-4 text-lg text-muted-foreground">
+          <motion.p variants={fadeInUp} className="mt-4 text-base sm:text-lg text-muted-foreground">
             <span className="text-foreground font-semibold">Empat langkah mudah,</span> dari pelanggan scan QR hingga sesi rental berakhir otomatis. Semua dikelola dalam satu sistem pintar untuk kemudahan Anda.
           </motion.p>
         </motion.div>
@@ -79,11 +79,11 @@ export default function HowItWorks() {
                         >
                           <span className="text-xs font-bold text-primary">{step.num}</span>
                         </motion.div>
-                        <h3 className="text-xl sm:text-2xl font-semibold">{step.title}</h3>
+                        <h3 className="text-lg sm:text-2xl font-semibold">{step.title}</h3>
                       </div>
                       <p
-                        className={`mt-3 text-muted-foreground leading-relaxed max-w-md ${
-                          i % 2 === 0 ? "lg:text-right" : ""
+                        className={`mt-3 text-muted-foreground leading-relaxed max-w-md w-full text-center ${
+                          i % 2 === 0 ? "lg:text-right" : "lg:text-left"
                         }`}
                       >
                         {step.desc}

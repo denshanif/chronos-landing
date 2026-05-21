@@ -32,13 +32,13 @@ export default function CTA() {
           <div className="relative z-10">
             <motion.h2
               variants={blurRevealUp}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
+              className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight"
             >
               Siap Memulai Otomatisasi Rental PlayStation Anda?
             </motion.h2>
             <motion.p
               variants={fadeInUp}
-              className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto"
+              className="mt-4 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto"
             >
               Mulai dengan <span className="text-foreground font-semibold">trial</span>, <span className="text-foreground font-semibold">tanpa biaya komitmen</span> di awal. Kami siap bantu setup dan pastikan Anda merasakan <span className="text-foreground font-semibold">kemudahan</span> mengelola rental PlayStation secara otomatis.
             </motion.p>
