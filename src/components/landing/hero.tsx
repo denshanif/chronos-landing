@@ -10,7 +10,7 @@ export default function Hero() {
   const { scrollY } = useScroll();
   const parallaxY = useTransform(scrollY, [0, 600], [0, 40]);
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-gradient-to-b from-neutral-50/80 to-white overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center bg-gradient-to-b from-neutral-50/80 to-white dark:from-neutral-950/80 dark:to-background overflow-hidden">
       <Container className="relative z-10 pt-20 pb-16 sm:pb-20 lg:pt-24 lg:pb-32">
         <motion.div
           variants={staggerContainer}
@@ -58,13 +58,13 @@ export default function Hero() {
           >
             <motion.div className="relative max-w-5xl mx-auto" style={{ y: parallaxY }}>
               <div className="absolute -top-10 -right-10 w-72 h-72 bg-primary/[0.03] rounded-full blur-3xl" aria-hidden="true" />
-              <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-black/[0.03] rounded-full blur-3xl" aria-hidden="true" />
+              <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-black/[0.03] dark:bg-white/[0.03] rounded-full blur-3xl" aria-hidden="true" />
 
               <div className="relative">
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative rounded-2xl border border-border/20 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.12)] overflow-hidden bg-white max-w-[88%] lg:max-w-[78%]"
+                  className="relative rounded-2xl border border-border/20 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.12)] overflow-hidden bg-white dark:bg-card max-w-[88%] lg:max-w-[78%]"
                 >
                   <div className="h-8 sm:h-9 bg-muted/30 border-b border-border/30 flex items-center px-4 gap-2">
                     <div className="flex gap-1.5">
@@ -87,7 +87,7 @@ export default function Hero() {
                 <motion.div
                   animate={{ y: [0, -12, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative -mt-16 sm:-mt-20 md:-mt-28 ml-auto rounded-2xl border border-border/20 shadow-[0_25px_60px_-12px_rgba(0,0,0,0.2)] overflow-hidden bg-white max-w-[88%] lg:max-w-[78%]"
+                  className="relative -mt-16 sm:-mt-20 md:-mt-28 ml-auto rounded-2xl border border-border/20 shadow-[0_25px_60px_-12px_rgba(0,0,0,0.2)] overflow-hidden bg-white dark:bg-card max-w-[88%] lg:max-w-[78%]"
                 >
                   <div className="h-8 sm:h-9 bg-muted/30 border-b border-border/30 flex items-center px-4 gap-2">
                     <div className="flex gap-1.5">

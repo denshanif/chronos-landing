@@ -16,7 +16,7 @@ export default function CTA() {
           viewport={{ once: true }}
           className="relative rounded-3xl bg-gradient-to-br from-primary/5 via-primary/[0.02] to-primary/5 border border-primary/10 p-8 sm:p-12 lg:p-16 text-center max-w-4xl mx-auto overflow-hidden"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,oklch(0.546_0.245_262.881_/_0.06),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--primary)_/_0.06,transparent_70%)]" />
           <div className="relative z-10">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
               Siap Memulai Otomatisasi Rental PlayStation Anda?

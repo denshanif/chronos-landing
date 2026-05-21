@@ -84,7 +84,7 @@ export default function Pricing() {
               className={`relative rounded-2xl border p-6 sm:p-8 transition-all duration-300 flex flex-col ${
                 plan.popular
                   ? "border-primary/30 bg-primary/[0.02] shadow-sm shadow-primary/5"
-                  : "border-border/50 bg-white hover:shadow-md"
+                  : "border-border/50 bg-white dark:bg-card hover:shadow-md"
               }`}
             >
               {plan.popular && (
