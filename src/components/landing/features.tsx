@@ -14,17 +14,17 @@ const features = [
   {
     icon: CreditCard,
     title: "Pembayaran Digital",
-    desc: "Terima pembayaran otomatis via QRIS, e-wallet, dan transfer bank real-time.",
+    desc: "Terima pembayaran otomatis via QRIS melalui Mobile Banking, dan E-Wallet.",
   },
   {
     icon: Timer,
     title: "Auto Timer",
-    desc: "Waktu rental terhitung otomatis. Notifikasi peringatan saat waktu habis.",
+    desc: "Waktu rental terhitung otomatis. Perangkat otomatis mati saat waktu habis, tanpa perlu intervensi operator.",
   },
   {
-    icon: Settings,
-    title: "Kontrol Perangkat",
-    desc: "Nyalakan/matikan PlayStation dari jarak jauh. Monitor status perangkat real-time.",
+    icon: Monitor,
+    title: "Monitoring Perangkat",
+    desc: "Pantau status perangkat secara real-time, termasuk status online/offline, dan statistik penggunaan perangkat.",
   },
   {
     icon: BarChart3,
@@ -33,8 +33,8 @@ const features = [
   },
   {
     icon: Users,
-    title: "Aktivitas Operator",
-    desc: "Lacak setiap tindakan operator — mulai dari buka sesi hingga setel ulang perangkat.",
+    title: "Manajemen Operator",
+    desc: "Kelola akses operator, pantau aktivitas, dan atur hak akses dengan mudah.",
   },
 ];
 

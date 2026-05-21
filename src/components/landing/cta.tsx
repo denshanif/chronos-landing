@@ -19,16 +19,13 @@ export default function CTA() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,oklch(0.546_0.245_262.881_/_0.06),transparent_70%)]" />
           <div className="relative z-10">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-              Siap Mengotomatiskan Bisnis Rental Anda?
+              Siap Memulai Otomatisasi Rental PlayStation Anda?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-              Mulai trial gratis 14 hari. Tidak perlu kartu kredit. Setup dalam 10 menit.
+              Mulai dengan trial, tanpa biaya komitmen di awal. Kami siap bantu setup dan pastikan Anda merasakan kemudahan mengelola rental PlayStation secara otomatis.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="default" size="lg" className="px-8 text-base h-12">
-                Request Demo Gratis
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 text-base h-12">
                 Hubungi Kami
               </Button>
             </div>

@@ -7,50 +7,41 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const plans = [
   {
-    name: "Starter",
-    price: "Rp 299RB",
-    period: "/bulan",
+    name: "Newbie",
     desc: "Cocok untuk pemilik 1-2 unit PlayStation.",
     features: [
       "Manajemen 2 perangkat",
-      "Self-checkout basic",
-      "Pembayaran QRIS",
-      "Timer otomatis",
-      "Laporan harian",
+      "Self-checkout pelanggan",
+      "Pembayaran QRIS otomatis",
+      "Timer rental otomatis",
+      "Laporan harian sederhana",
     ],
     cta: "Mulai Trial",
     popular: false,
   },
   {
-    name: "Business",
-    price: "Rp 599RB",
-    period: "/bulan",
+    name: "Pro Player",
     desc: "Untuk rental dengan 3-6 unit PlayStation.",
     features: [
       "Manajemen 6 perangkat",
       "Self-checkout penuh",
-      "Pembayaran multi-channel",
-      "Timer + notifikasi otomatis",
-      "Dashboard real-time",
-      "Monitor pendapatan",
-      "Aktivitas operator",
+      "Pembayaran QRIS otomatis",
+      "Timer otomatis + notifikasi",
+      "Dashboard dan monitor pendapatan",
+      "Manajemen operator",
     ],
     cta: "Mulai Trial",
     popular: true,
   },
   {
-    name: "Enterprise",
-    price: "Rp 999RB",
-    period: "/bulan",
+    name: "God Mode",
     desc: "Untuk usaha rental skala besar 7+ unit.",
     features: [
-      "Manajemen unlimited",
+      "Manajemen unlimited perangkat",
       "Semua fitur Business",
-      "Kontrol perangkat jarak jauh",
-      "API integration",
-      "Laporan kustom",
-      "Dedicated support",
-      "Priority response",
+      "Monitoring perangkat real-time",
+      "Manajemen operator penuh",
+      "Prioritas support",
     ],
     cta: "Hubungi Kami",
     popular: false,
@@ -72,10 +63,10 @@ export default function Pricing() {
             Harga
           </motion.span>
           <motion.h2 variants={fadeInUp} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-            Harga Simpel & Transparan
+            Pilih Paket yang Tepat
           </motion.h2>
           <motion.p variants={fadeInUp} className="mt-4 text-lg text-muted-foreground">
-            Tidak ada biaya tersembunyi. Mulai trial gratis 14 hari tanpa kartu kredit.
+            Mulai trial gratis 14 hari tanpa kartu kredit. Hubungi kami untuk informasi harga dan kebutuhan khusus.
           </motion.p>
         </motion.div>
 
@@ -90,7 +81,7 @@ export default function Pricing() {
             <motion.div
               key={plan.name}
               variants={fadeInUp}
-              className={`relative rounded-2xl border p-6 sm:p-8 transition-all duration-300 ${
+              className={`relative rounded-2xl border p-6 sm:p-8 transition-all duration-300 flex flex-col ${
                 plan.popular
                   ? "border-primary/30 bg-primary/[0.02] shadow-sm shadow-primary/5"
                   : "border-border/50 bg-white hover:shadow-md"
@@ -105,11 +96,12 @@ export default function Pricing() {
                 <h3 className="text-lg font-semibold">{plan.name}</h3>
                 <p className="text-sm text-muted-foreground mt-1">{plan.desc}</p>
               </div>
+
               <div className="mb-6">
-                <span className="text-3xl sm:text-4xl font-bold">{plan.price}</span>
-                <span className="text-sm text-muted-foreground">{plan.period}</span>
+                <span className="text-sm text-muted-foreground italic">Harga custom — hubungi kami</span>
               </div>
-              <ul className="space-y-3 mb-8">
+
+              <ul className="space-y-3 mb-8 flex-1">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <svg className="mt-0.5 size-4 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">

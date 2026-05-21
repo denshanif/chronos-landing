@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -7,7 +8,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-gradient-to-b from-blue-50/50 to-white overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center bg-gradient-to-b from-neutral-50/80 to-white overflow-hidden">
       <Container className="relative z-10 pt-20 pb-16 sm:pb-20 lg:pt-24 lg:pb-32">
         <motion.div
           variants={staggerContainer}
@@ -19,22 +20,22 @@ export default function Hero() {
             variants={fadeInUp}
             className="inline-flex items-center rounded-full border border-border bg-muted/50 px-4 py-1.5 text-xs font-medium text-muted-foreground mb-6"
           >
-            IoT-Powered Rental Automation
+            Otomatisasi Rental PS berbasis IoT
           </motion.span>
 
           <motion.h1
             variants={fadeInUp}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.05]"
           >
-            Rental PlayStation{" "}
-            <span className="text-primary">Kini Bisa Berjalan Sendiri.</span>
+            Rental PlayStation kini lebih{" "}
+            <span className="text-primary">Mudah, Cepat, dan Pintar.</span>
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
             className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed"
           >
-            Self-checkout, pembayaran digital, dan kontrol otomatis dalam satu sistem pintar.
+            Dengan fitur Self-checkout, pembayaran QRIS, dan kontrol otomatis dalam satu sistem pintar.
           </motion.p>
 
           <motion.div
@@ -53,33 +54,56 @@ export default function Hero() {
             variants={fadeInUp}
             className="mt-16 sm:mt-20 lg:mt-24 w-full"
           >
-            <div className="relative w-full aspect-[16/9] max-w-5xl mx-auto rounded-2xl bg-gradient-to-br from-blue-100/40 via-white to-blue-50/30 border border-border/50 shadow-sm overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-4 sm:gap-6 p-6 sm:p-10 w-full h-full">
-                  <div className="rounded-xl bg-white/80 backdrop-blur-sm border border-border/50 p-4 sm:p-6 shadow-sm">
-                    <div className="h-2 w-16 bg-primary/20 rounded-full mb-3" />
-                    <div className="h-2 w-24 bg-muted rounded-full mb-2" />
-                    <div className="h-2 w-20 bg-muted rounded-full" />
-                  </div>
-                  <div className="rounded-xl bg-white/80 backdrop-blur-sm border border-border/50 p-4 sm:p-6 shadow-sm translate-y-4 sm:translate-y-8">
-                    <div className="h-2 w-12 bg-primary/20 rounded-full mb-3" />
-                    <div className="h-2 w-20 bg-muted rounded-full mb-2" />
-                    <div className="h-2 w-16 bg-muted rounded-full" />
-                  </div>
-                  <div className="rounded-xl bg-white/80 backdrop-blur-sm border border-border/50 p-4 sm:p-6 shadow-sm -translate-y-2">
-                    <div className="h-2 w-14 bg-primary/20 rounded-full mb-3" />
-                    <div className="h-2 w-22 bg-muted rounded-full mb-2" />
-                    <div className="h-2 w-18 bg-muted rounded-full" />
-                  </div>
-                  <div className="rounded-xl bg-primary/5 backdrop-blur-sm border border-primary/10 p-4 sm:p-6 shadow-sm">
-                    <div className="h-2 w-14 bg-primary/20 rounded-full mb-3" />
-                    <div className="h-3 w-full bg-gradient-to-r from-primary/10 to-primary/5 rounded-full mb-2" />
-                    <div className="flex justify-between">
-                      <div className="h-2 w-12 bg-muted rounded-full" />
-                      <div className="h-2 w-8 bg-primary/20 rounded-full" />
+            <div className="relative max-w-5xl mx-auto">
+              <div className="absolute -top-10 -right-10 w-72 h-72 bg-primary/[0.03] rounded-full blur-3xl" aria-hidden="true" />
+              <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-black/[0.03] rounded-full blur-3xl" aria-hidden="true" />
+
+              <div className="relative">
+                <motion.div
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative rounded-2xl border border-border/20 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.12)] overflow-hidden bg-white max-w-[88%] lg:max-w-[78%]"
+                >
+                  <div className="h-8 sm:h-9 bg-muted/30 border-b border-border/30 flex items-center px-4 gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="size-2.5 rounded-full bg-red-400/60" />
+                      <div className="size-2.5 rounded-full bg-yellow-400/60" />
+                      <div className="size-2.5 rounded-full bg-green-400/60" />
                     </div>
+                    <div className="ml-3 h-5 flex-1 max-w-[180px] rounded-md bg-muted/50" />
                   </div>
-                </div>
+                  <Image
+                    src="/images/preview-2.png"
+                    alt="Chronos Analytics — Monitoring pendapatan real-time"
+                    width={800}
+                    height={500}
+                    className="w-full h-auto"
+                    priority
+                  />
+                </motion.div>
+
+                <motion.div
+                  animate={{ y: [0, -12, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative -mt-16 sm:-mt-20 md:-mt-28 ml-auto rounded-2xl border border-border/20 shadow-[0_25px_60px_-12px_rgba(0,0,0,0.2)] overflow-hidden bg-white max-w-[88%] lg:max-w-[78%]"
+                >
+                  <div className="h-8 sm:h-9 bg-muted/30 border-b border-border/30 flex items-center px-4 gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="size-2.5 rounded-full bg-red-400/60" />
+                      <div className="size-2.5 rounded-full bg-yellow-400/60" />
+                      <div className="size-2.5 rounded-full bg-green-400/60" />
+                    </div>
+                    <div className="ml-3 h-5 flex-1 max-w-[240px] rounded-md bg-muted/50" />
+                  </div>
+                  <Image
+                    src="/images/preview-1.png"
+                    alt="Chronos Dashboard — Tampilan utama sistem"
+                    width={800}
+                    height={500}
+                    className="w-full h-auto"
+                    priority
+                  />
+                </motion.div>
               </div>
             </div>
           </motion.div>

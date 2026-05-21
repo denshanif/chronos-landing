@@ -8,9 +8,7 @@ import { cn } from "@/lib/utils";
 import { useScroll } from "@/hooks/use-scroll";
 
 const navLinks = [
-  { label: "Produk", href: "#produk" },
   { label: "Fitur", href: "#fitur" },
-  { label: "Dashboard", href: "#dashboard" },
   { label: "Cara Kerja", href: "#cara-kerja" },
   { label: "Harga", href: "#harga" },
 ];
@@ -46,7 +44,7 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-4">
           <Button variant="default" size="default" className="hidden sm:inline-flex">
-            Request Demo
+            Mulai Trial
           </Button>
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -99,7 +97,7 @@ export default function Navbar() {
               </div>
               <div className="mt-8">
                 <Button variant="default" size="lg" className="w-full">
-                  Request Demo
+                  Mulai Trial
                 </Button>
               </div>
             </motion.div>

@@ -8,23 +8,28 @@ export default function HowItWorks() {
   const steps = [
     {
       num: "01",
-      title: "Pelanggan Check-In",
-      desc: "Pelanggan memilih paket rental di layar monitor dan membayar via QRIS atau e-wallet.",
+      title: "Pelanggan Scan QR Perangkat",
+      desc: "Pelanggan scan QR code di PlayStation, lalu sistem akan menampilkan halaman self-checkout dengan pilihan paket rental.",
     },
     {
       num: "02",
-      title: "Sistem Aktif Otomatis",
-      desc: "PlayStation menyala, timer mulai berjalan, dan sesi tercatat di dashboard.",
+      title: "Pelanggan Pilih Paket & Bayar",
+      desc: "Pelanggan pilih paket rental, lalu bayar otomatis via QRIS menggunakan Mobile Banking atau E-Wallet.",
     },
     {
       num: "03",
-      title: "Monitor Real-Time",
-      desc: "Pantau pendapatan, durasi pemakaian, dan status perangkat dari mana saja.",
+      title: "Sesi Rental Dimulai",
+      desc: "Setelah pembayaran terkonfirmasi, timer rental otomatis berjalan. Perangkat aktif selama waktu yang dipilih.",
     },
     {
       num: "04",
-      title: "Selesai & Laporan",
-      desc: "Timer habis, perangkat mati otomatis. Laporan harian terkirim ke email Anda.",
+      title: "Sesi Berakhir Otomatis",
+      desc: "Saat waktu habis, perangkat otomatis mati. Tidak ada lagi waktu rental yang terbuang.",
+    },
+    {
+      num: "05",
+      title: "Monitoring & Laporan",
+      desc: "Operator bisa pantau status perangkat, sesi aktif, dan laporan pendapatan secara real-time melalui dashboard admin.",
     },
   ];
 
@@ -49,29 +54,50 @@ export default function HowItWorks() {
           </motion.p>
         </motion.div>
 
-        <div className="relative">
+        <div className="relative max-w-4xl mx-auto">
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-border/50 -translate-x-1/2" />
-          <div className="space-y-12 sm:space-y-16 relative">
+
+          <div className="space-y-16 sm:space-y-20 relative">
             {steps.map((step, i) => (
-              <motion.div
-                key={step.num}
-                variants={fadeInUp}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true, margin: "-50px" }}
-                className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-8 lg:gap-16`}
-              >
-                <div className="flex-1 text-center lg:text-left">
-                  <span className="text-6xl sm:text-7xl font-bold text-primary/10 select-none">{step.num}</span>
-                  <h3 className="text-xl sm:text-2xl font-semibold mt-2 mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed max-w-md mx-auto lg:mx-0">{step.desc}</p>
-                </div>
-                <div className="flex-1 flex justify-center">
-                  <div className="size-32 sm:size-40 rounded-2xl border border-border/50 bg-white shadow-sm flex items-center justify-center">
-                    <span className="text-3xl sm:text-4xl font-bold text-primary/30">{step.num}</span>
+              <div key={step.num} className="relative">
+                <motion.div
+                  variants={fadeInUp}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true, margin: "-50px" }}
+                  className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-8 lg:gap-16`}
+                >
+                  <div className="flex-1">
+                    <div className="flex flex-col items-center lg:items-start">
+                      <div
+                        className={`inline-flex items-center gap-3 ${i % 2 === 0 ? "lg:flex-row-reverse" : ""}`}
+                      >
+                        <div className="size-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                          <span className="text-xs font-bold text-primary">{step.num}</span>
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-semibold">{step.title}</h3>
+                      </div>
+                      <p
+                        className={`mt-3 text-muted-foreground leading-relaxed max-w-md ${
+                          i % 2 === 0 ? "lg:text-right" : ""
+                        }`}
+                      >
+                        {step.desc}
+                      </p>
+                    </div>
                   </div>
+
+                  <div className="hidden lg:block flex-1" />
+                </motion.div>
+
+                <div className="hidden lg:flex absolute left-1/2 top-1.5 -translate-x-1/2 size-4 rounded-full border-2 border-primary/30 bg-background z-10">
+                  <motion.div
+                    className="size-1.5 rounded-full bg-primary/40 m-auto"
+                    animate={{ scale: [1, 1.4, 1] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  />
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
