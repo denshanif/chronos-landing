@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Monitor, CreditCard, Timer, Settings, BarChart3, Users } from "lucide-react";
+import { Monitor, CreditCard, Timer, BarChart3, Users } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
@@ -38,9 +38,17 @@ const features = [
   },
 ];
 
+const iconVariants = {
+  hover: {
+    scale: 1.15,
+    rotate: 3,
+    transition: { type: "spring" as const, stiffness: 400, damping: 15 },
+  },
+};
+
 export default function Features() {
   return (
-    <section id="fitur" className="py-24 sm:py-32">
+    <section id="fitur" className="py-24 sm:py-32 scroll-mt-20 lg:scroll-mt-24">
       <Container>
         <motion.div
           variants={staggerContainer}
@@ -73,11 +81,16 @@ export default function Features() {
               <motion.div
                 key={feature.title}
                 variants={fadeInUp}
-                className="group rounded-2xl border border-border/50 bg-white p-6 sm:p-8 transition-all duration-300 hover:shadow-md hover:border-border/80"
+                whileHover={{ y: -6, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="group rounded-2xl border border-border/50 bg-card p-6 sm:p-8 shadow-sm transition-colors duration-300 hover:border-border/80"
               >
-                <div className="flex size-12 items-center justify-center rounded-xl bg-primary/5 text-primary mb-5 group-hover:bg-primary/10 transition-colors">
+                <motion.div
+                  className="flex size-12 items-center justify-center rounded-xl bg-primary/5 text-primary mb-5 group-hover:bg-primary/10 transition-colors duration-300"
+                  variants={iconVariants}
+                >
                   <Icon className="size-6" />
-                </div>
+                </motion.div>
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
               </motion.div>
