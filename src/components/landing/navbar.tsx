@@ -9,6 +9,7 @@ import { useScroll } from "@/hooks/use-scroll";
 import { useTheme } from "@/components/theme-provider";
 
 const WA_LINK = "https://wa.me/6285189897289";
+const DEMO_LINK = "https://chronos.katalisdev.my.id";
 
 const navLinks = [
   { label: "Fitur", href: "#fitur" },
@@ -61,6 +62,11 @@ export default function Navbar() {
             )}
           </button>
 
+          <a href={DEMO_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-block">
+            <Button variant="outline" size="default">
+              Demo
+            </Button>
+          </a>
           <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-block">
             <Button variant="default" size="default">
               Mulai Trial
@@ -117,6 +123,11 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="mt-8 space-y-3">
+                <a href={DEMO_LINK} target="_blank" rel="noopener noreferrer" className="block">
+                  <Button variant="outline" size="lg" className="w-full">
+                    Demo
+                  </Button>
+                </a>
                 <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="block">
                   <Button variant="default" size="lg" className="w-full">
                     Mulai Trial
