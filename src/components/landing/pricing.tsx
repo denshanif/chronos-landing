@@ -50,7 +50,7 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section id="harga" className="py-24 sm:py-32">
+    <section id="harga" className="py-24 sm:py-32 scroll-mt-20 lg:scroll-mt-24">
       <Container>
         <motion.div
           variants={staggerContainer}

@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const parallaxY = useTransform(scrollY, [0, 600], [0, 40]);
   return (
     <section className="relative min-h-[90vh] flex items-center bg-gradient-to-b from-neutral-50/80 to-white overflow-hidden">
       <Container className="relative z-10 pt-20 pb-16 sm:pb-20 lg:pt-24 lg:pb-32">
@@ -54,7 +56,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="mt-16 sm:mt-20 lg:mt-24 w-full"
           >
-            <div className="relative max-w-5xl mx-auto">
+            <motion.div className="relative max-w-5xl mx-auto" style={{ y: parallaxY }}>
               <div className="absolute -top-10 -right-10 w-72 h-72 bg-primary/[0.03] rounded-full blur-3xl" aria-hidden="true" />
               <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-black/[0.03] rounded-full blur-3xl" aria-hidden="true" />
 
@@ -105,7 +107,7 @@ export default function Hero() {
                   />
                 </motion.div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </Container>
