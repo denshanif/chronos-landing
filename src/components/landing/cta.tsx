@@ -22,7 +22,7 @@ export default function CTA() {
             Siap Memulai Otomatisasi Rental PlayStation Anda?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-            Mulai dengan trial, tanpa biaya komitmen di awal. Kami siap bantu setup dan pastikan Anda merasakan kemudahan mengelola rental PlayStation secara otomatis.
+            Mulai dengan <span className="text-foreground font-semibold">trial</span>, <span className="text-foreground font-semibold">tanpa biaya komitmen</span> di awal. Kami siap bantu setup dan pastikan Anda merasakan <span className="text-foreground font-semibold">kemudahan</span> mengelola rental PlayStation secara otomatis.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer">

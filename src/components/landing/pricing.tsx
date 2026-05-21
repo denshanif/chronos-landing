@@ -45,7 +45,7 @@ const plans = [
       "Manajemen operator penuh",
       "Prioritas support",
     ],
-    cta: { label: "Hubungi Kami", href: WA_LINK },
+    cta: { label: "Mulai Trial", href: WA_LINK },
     popular: false,
   },
 ];
@@ -68,7 +68,7 @@ export default function Pricing() {
             Pilih Paket yang Tepat
           </motion.h2>
           <motion.p variants={fadeInUp} className="mt-4 text-lg text-muted-foreground">
-            Mulai trial gratis 14 hari tanpa kartu kredit. Hubungi kami untuk informasi harga dan kebutuhan khusus.
+            Mulai <span className="text-foreground font-semibold">trial gratis 14 hari</span> tanpa kartu kredit. Hubungi kami untuk informasi harga dan kebutuhan khusus.
           </motion.p>
         </motion.div>
 

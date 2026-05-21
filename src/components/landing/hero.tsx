@@ -39,7 +39,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed"
           >
-            Dengan fitur Self-checkout, pembayaran QRIS, dan kontrol otomatis dalam satu sistem pintar.
+            Dengan fitur <span className="text-foreground font-semibold">Self-checkout</span>, <span className="text-foreground font-semibold">pembayaran QRIS</span>, dan <span className="text-foreground font-semibold">kontrol otomatis</span> dalam satu sistem pintar.
           </motion.p>
 
           <motion.div

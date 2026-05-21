@@ -9,32 +9,32 @@ const features = [
   {
     icon: Monitor,
     title: "Self-Checkout",
-    desc: "Pelanggan bisa memilih dan memulai sesi rental secara mandiri tanpa bantuan staf.",
+    desc: "Pelanggan bisa memilih dan memulai sesi rental secara mandiri <span className=\"text-foreground font-semibold\">tanpa bantuan staf</span>.",
   },
   {
     icon: CreditCard,
     title: "Pembayaran Digital",
-    desc: "Terima pembayaran otomatis via QRIS melalui Mobile Banking, dan E-Wallet.",
+    desc: "Terima pembayaran otomatis via <span className=\"text-foreground font-semibold\">QRIS</span> melalui Mobile Banking, dan <span className=\"text-foreground font-semibold\">E-Wallet</span>.",
   },
   {
     icon: Timer,
     title: "Auto Timer",
-    desc: "Waktu rental terhitung otomatis. Perangkat otomatis mati saat waktu habis, tanpa perlu intervensi operator.",
+    desc: "Waktu rental terhitung otomatis. Perangkat otomatis mati saat waktu habis, <span className=\"text-foreground font-semibold\">tanpa perlu intervensi operator</span>.",
   },
   {
     icon: Monitor,
     title: "Monitoring Perangkat",
-    desc: "Pantau status perangkat secara real-time, termasuk status online/offline, dan statistik penggunaan perangkat.",
+    desc: "Pantau status perangkat secara <span className=\"text-foreground font-semibold\">real-time</span>, termasuk status <span className=\"text-foreground font-semibold\">online/offline</span>, dan statistik penggunaan perangkat.",
   },
   {
     icon: BarChart3,
     title: "Revenue Monitoring",
-    desc: "Laporan pendapatan harian, mingguan, dan bulanan dengan grafik interaktif.",
+    desc: "Laporan pendapatan <span className=\"text-foreground font-semibold\">harian, mingguan, dan bulanan</span> dengan grafik interaktif.",
   },
   {
     icon: Users,
     title: "Manajemen Operator",
-    desc: "Kelola akses operator, pantau aktivitas, dan atur hak akses dengan mudah.",
+    desc: "Kelola akses operator, pantau aktivitas, dan atur hak akses dengan <span className=\"text-foreground font-semibold\">mudah</span>.",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function Features() {
             Semua yang Anda Butuhkan
           </motion.h2>
           <motion.p variants={fadeInUp} className="mt-4 text-lg text-muted-foreground">
-            Platform all-in-one untuk mengelola bisnis rental PlayStation Anda secara otomatis.
+            Platform <span className="text-foreground font-semibold">all-in-one</span> untuk mengelola bisnis rental PlayStation Anda secara <span className="text-foreground font-semibold">otomatis</span>.
           </motion.p>
         </motion.div>
 
