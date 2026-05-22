@@ -5,7 +5,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 COPY . .
-RUN npm run build
+RUN DOCKER_BUILD=true npm run build
 
 FROM nginx:alpine AS runner
 COPY --from=builder /app/out /usr/share/nginx/html
