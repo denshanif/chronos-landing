@@ -1,31 +1,13 @@
 services:
-  chronos-app:
+  chronos:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: chronos-app
-    restart: unless-stopped
-    expose:
-      - "3000"
-    networks:
-      - chronos-network
-
-  chronos-nginx:
-    image: nginx:alpine
-    container_name: chronos-nginx
+    container_name: chronos
     restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./data/certbot/conf:/etc/letsencrypt:ro
       - ./data/certbot/www:/var/www/certbot:ro
-    depends_on:
-      - chronos-app
-    networks:
-      - chronos-network
-
-networks:
-  chronos-network:
-    driver: bridge
