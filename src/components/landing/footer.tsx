@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { blurRevealUp, staggerContainer, fadeInUp, appleEase } from "@/lib/animations";
 
-const WA_LINK = "https://wa.me/6285189897289";
-const DEMO_LINK = "https://chronos.katalisdev.my.id";
+const WA_LINK = "https://api.whatsapp.com/send/?phone=6285189897289&text=Halo%2C%20saya%20tertarik%20untuk%20request%20trial%2Fdemo%20Chronos.%20Mohon%20informasinya%2C%20terima%20kasih.";
 const COMPANY_LINK = "https://katalisdev.my.id";
 
 const footerLinks = [
@@ -20,7 +19,6 @@ const footerLinks = [
   {
     title: "Tautan",
     links: [
-      { label: "Demo Chronos", href: DEMO_LINK, external: true },
       { label: "Website Katalis", href: COMPANY_LINK, external: true },
       { label: "Hubungi Kami", href: WA_LINK, external: true },
     ],

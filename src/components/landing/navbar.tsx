@@ -10,8 +10,7 @@ import { useActiveSection } from "@/hooks/use-active-section";
 import { useTheme } from "@/components/theme-provider";
 import { appleEase } from "@/lib/animations";
 
-const WA_LINK = "https://wa.me/6285189897289";
-const DEMO_LINK = "https://chronos.katalisdev.my.id";
+const WA_LINK = "https://api.whatsapp.com/send/?phone=6285189897289&text=Halo%2C%20saya%20tertarik%20untuk%20request%20trial%2Fdemo%20Chronos.%20Mohon%20informasinya%2C%20terima%20kasih.";
 
 const navLinks = [
   { label: "Fitur", href: "#fitur" },
@@ -115,12 +114,7 @@ export default function Navbar() {
             </motion.span>
           </button>
 
-          <a href={DEMO_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-block">
-            <Button variant="outline" size="default" className="transition-all duration-300 hover:scale-[1.02] active:scale-[0.97]">
-              Demo
-            </Button>
-          </a>
-          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hidden sm:inline-block">
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer">
             <Button variant="default" size="default" className="transition-all duration-300 hover:scale-[1.02] active:scale-[0.97]">
               Mulai Trial
             </Button>
@@ -187,11 +181,6 @@ export default function Navbar() {
                   transition={{ delay: 0.35, duration: 0.4, ease: appleEase }}
                   className="mt-5 pt-5 border-t border-border/50 space-y-3"
                 >
-                  <a href={DEMO_LINK} target="_blank" rel="noopener noreferrer" className="block">
-                    <Button variant="outline" size="lg" className="w-full h-11 text-sm rounded-xl transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
-                      Demo
-                    </Button>
-                  </a>
                   <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="block">
                     <Button variant="default" size="lg" className="w-full h-11 text-sm rounded-xl transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]">
                       Mulai Trial

@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { blurRevealUp, staggerContainer, fadeInUp, appleEase } from "@/lib/animations";
 
-const WA_LINK = "https://wa.me/6285189897289";
+const WA_LINK = "https://api.whatsapp.com/send/?phone=6285189897289&text=Halo%2C%20saya%20tertarik%20untuk%20request%20trial%2Fdemo%20Chronos.%20Mohon%20informasinya%2C%20terima%20kasih.";
 
 const plans = [
   {

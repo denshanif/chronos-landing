@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { blurRevealUp, fadeInUp, staggerContainerSlow, appleEase } from "@/lib/animations";
 
-const WA_LINK = "https://wa.me/6285189897289";
+const WA_LINK = "https://api.whatsapp.com/send/?phone=6285189897289&text=Halo%2C%20saya%20tertarik%20untuk%20request%20trial%2Fdemo%20Chronos.%20Mohon%20informasinya%2C%20terima%20kasih.";
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -24,7 +24,7 @@ export default function Hero() {
             variants={blurRevealUp}
             className="inline-flex items-center rounded-full border border-border bg-muted/50 px-4 py-1.5 text-xs font-medium text-muted-foreground mb-6"
           >
-            Otomatisasi Rental PS berbasis IoT
+            Otomatisasi Rental PS pertama di Indonesia
           </motion.span>
 
           <motion.h1
